@@ -33,7 +33,7 @@ jobs:
           node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
       - run: npm ci
-      - run: npm run build-prod:lib
+      - run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
