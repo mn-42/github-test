@@ -5,5 +5,4 @@ export interface NgcxTreeSampleData {
   description?: string;
   nodes: NgcxTreeNode[];
   config?: NgcxTreeConfig<any>;
-  configPrint?: any;
 }

@@ -1,8 +1,16 @@
 <h1>Ngcx Tree Samples</h1>
 <p>
   Ngcx tree allows to render a tree and allows drag n drop only using the
-  &#64;angular/cdk dependency
+  &#64;angular/cdk dependency.
 </p>
+<p>To see the fired events open your dev tools and check console log.</p>
 @for (sample of samples;track sample.title) {
 <app-ngcx-tree-sample-viewer [sample]="sample"></app-ngcx-tree-sample-viewer>
 }
+<ng-template #treeNodeTemplate let-nodeWrapper="nodeWrapper">
+  <div class="node-container">
+    <strong class="node-text">{{ nodeWrapper.data.title }}</strong>
+    <i>(id:{{ nodeWrapper.id }}, next:{{ nodeWrapper.next?.id ?? "none" }})</i>
+    <button (click)="sampleClicked(nodeWrapper)">sample button</button>
+  </div>
+</ng-template>

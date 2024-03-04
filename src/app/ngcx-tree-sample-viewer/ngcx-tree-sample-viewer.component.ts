@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  NgcxTreeNodeMovedEvent,
+  NgcxTreeNodeWrapper,
+} from '@cluetec/ngcx-tree';
 import { NgcxTreeSampleData } from '../samples/_model';
 
 @Component({
@@ -17,5 +21,18 @@ export class NgcxTreeSampleViewerComponent implements OnInit {
     this.htmlCode = this.sample.config
       ? '<ngcx-tree [nodes]="nodes" [config]="config"></ngcx-tree>'
       : '<ngcx-tree [nodes]="nodes"></ngcx-tree>';
+  }
+
+  clickEvent(node: NgcxTreeNodeWrapper<any>) {
+    console.log('clickEvent fired: ', node);
+  }
+  selectEvent(node: NgcxTreeNodeWrapper<any>) {
+    console.log('selectEvent fired: ', node);
+  }
+  customEvent(event: any) {
+    console.log('customEvent fired: ', event);
+  }
+  nodeMoved(movedEvent: NgcxTreeNodeMovedEvent<any>) {
+    console.log('nodeMoved fired: ', movedEvent);
   }
 }

@@ -42,7 +42,14 @@
   <pre class="content data">{{ sample.nodes | json }}</pre>
   } @default {
   <div class="content ngcx-tree">
-    <ngcx-tree [nodes]="sample.nodes" [config]="sample.config"></ngcx-tree>
+    <ngcx-tree
+      [nodes]="sample.nodes"
+      [config]="sample.config"
+      (clickEvent)="clickEvent($event)"
+      (selectEvent)="selectEvent($event)"
+      (customEvent)="customEvent($event)"
+      (nodeMoved)="nodeMoved($event)"
+    ></ngcx-tree>
   </div>
   } }
 </div>
