@@ -10,7 +10,6 @@ export class PrintMethodsPipe implements PipeTransform {
 
   printMethods(value: any) {
     let result = value;
-    console.log(value);
     if (typeof value == 'function') {
       if (value.name) {
         result = value.name;
