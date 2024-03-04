@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { NgcxTreeComponent } from '@cluetec/ngcx-tree';
 import { AppComponent } from './app.component';
+import { NgcxTreeSampleViewerComponent } from './ngcx-tree-sample-viewer/ngcx-tree-sample-viewer.component';
+import { PrintMethodsPipe } from './print-methods.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, NgcxTreeSampleViewerComponent, PrintMethodsPipe],
+  imports: [BrowserModule, NgcxTreeComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
